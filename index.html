@@ -12,6 +12,7 @@
 </head>
 
 <body>
+       
     <div class="container">
         <div class="row">
             <div class="header center">
@@ -19,7 +20,7 @@
             </div>
         </div>
         <div class="row">
-            <form class="s12 valign-wrapper">
+            <form id="search-form" class="s12 valign-wrapper">
                 <div class="input-field col s4">
                     <input placeholder="Location" id="location" type="text" class="validate">
                 </div>
@@ -30,7 +31,8 @@
                     <input placeholder="Key Words" id="key-words" type="text" class="validate">
                 </div>
                 <div class="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+
+                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
                     </button>
                 </div>
             </form>
@@ -40,15 +42,45 @@
 
             </div>
         </div>
+        <div class="row">
+                <form id="user-input" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="First Name" id="first_name" type="text" class="validate">
+                     
+                    </div>
+                    <div class="input-field col s12">
+                      <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Location Ex:Kansas City, MO" id="password" type="text" class="validate">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Email" id="email" type="email" class="validate">
+                    </div>
+                  </div>
+                  <div class="col s2">
+                        <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
+                        </button>
+                    </div>
+                  
+                </form>
+              </div>
+
         <div class="row scale-transition scale-out">
             <div class="col s12 m6" id="map">
-
             </div>
         </div>
     </div>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
     <script type="text/javascript" src="assets/javascript/logic.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 </body>
 
 </html>
