@@ -1,0 +1,38 @@
+body {
+    background-image: url("../images/skyline2.jpg");
+}
+
+h1 {
+     padding: 20px;
+     position: relative;
+     top: 20px;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+}
+
+
+#submit {
+    background-color: salmon;
+}
+
+#search-form {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.row .input-field input:focus {
+    border-bottom: 1px solid salmon !important;
+    box-shadow: 0 1px 0 0 salmon !important;
+  }
+
+#user-input {
+    background-color: white;
+    float: right;
+    width: 400px;
+    border-radius: 25px;
+}
+
+#submit-user {
+    background-color: salmon;
+    margin-left: 230px;
+}
