@@ -54,3 +54,13 @@ nav {
 #work {
     background-color: white;
 }
+
+#event-display {
+    background-color: white;
+}
+.list-group-item {
+    border-style: ridge;
+    border-width: 5pt;
+    border-color: salmon;
+    padding: 5px;
+}
