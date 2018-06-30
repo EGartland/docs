@@ -76,7 +76,7 @@ $(document).ready(function () {
             $eventListItem.append("<p>Venue: " + venueName + "</p>");
 
 
-            var startTime = eventResponse.start_time;
+            var startTime = moment(eventResponse.start_time).format('MMMM Do YYYY, h:mm:ss a');
 
             console.log(startTime);
 
