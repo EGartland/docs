@@ -91,4 +91,23 @@ $(document).ready(function () {
         // Constructing a URL to search Giphy for the name of the person who said the quote
         makeQuery(location, category, keyWord)
     });
+
+
+    $("#submit-user").on("click", function (event) {
+        event.preventDefault();
+        // In this case, the "this" keyword refers to the button that was clicked
+        var firstName = $("#first_name").val().trim();
+        var lastName = $("#last_name").val().trim();
+        var location = $("#location").val().trim();
+        var email = $("#email").val().trim();
+        var userInput = $("#user-input");
+        console.log(userInput)
+        userInput.hide();
+        userInput2.show()
+    });
+
+
+    var userInput2 = $("#user-input2");
+    userInput2.hide();
+
 });
