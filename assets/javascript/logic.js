@@ -12,20 +12,22 @@ $(document).ready(function () {
         }
     });
 
-    var config = {
-        apiKey: "AIzaSyAlQqYR8mkr7JCsFZFbdpZBAVmu3PAskKg",
-        authDomain: "group-project-1-65238.firebaseapp.com",
-        databaseURL: "https://group-project-1-65238.firebaseio.com",
-        projectId: "group-project-1-65238",
-        storageBucket: "group-project-1-65238.appspot.com",
-        messagingSenderId: "182134415917"
-    };
-    firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCr_hLnXU7Cnf5tu-ujEIL4XMynoRAq_bQ",
+    authDomain: "fewdaysoff-36949.firebaseapp.com",
+    databaseURL: "https://fewdaysoff-36949.firebaseio.com",
+    projectId: "fewdaysoff-36949",
+    storageBucket: "fewdaysoff-36949.appspot.com",
+    messagingSenderId: "140262551840"
+  };
+  firebase.initializeApp(config);
 
     // Create a variable to reference the database
     var database = firebase.database();
 
     function makeQuery(location, category, keyWord) {
+
         var location = location;
         var category = category;
         var keyWord = keyWord;
@@ -36,11 +38,17 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                // console.log('url', queryURL);
-                // console.log(response)
+                console.log('url', queryURL);
+                console.log(response)
                 var results = JSON.parse(response).events;
-                // console.log('results', results)
-                updatePage(results);
+                console.log('results', results)
+
+                if (results == null) {
+                    $("#event-list").append("<h1>No results found, sorry!</h1>")
+                }
+                else {
+                    updatePage(results);
+                }
             });
 
     };
@@ -73,7 +81,7 @@ $(document).ready(function () {
             $eventListItem.append("<p>Venue: " + venueName + "</p>");
 
 
-            var startTime = eventResponse.start_time;
+            var startTime = moment(eventResponse.start_time).format('MMMM Do YYYY, h:mm:ss a');
 
             console.log(startTime);
 
@@ -95,6 +103,7 @@ $(document).ready(function () {
 
         // Constructing a URL to search Giphy for the name of the person who said the quote
         makeQuery(location, category, keyWord)
+        $("#event-list").removeClass("scale-out")
     });
 
 
@@ -103,7 +112,11 @@ $(document).ready(function () {
         // In this case, the "this" keyword refers to the button that was clicked
         var firstName = $("#first_name").val().trim();
         var lastName = $("#last_name").val().trim();
+
         var userLocation = $("#user_location").val().trim();
+
+        var location = $("#location1").val().trim();
+
         var email = $("#email").val().trim();
         var userInput = $("#user-input");
         console.log(userInput)
