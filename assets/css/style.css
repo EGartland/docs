@@ -32,7 +32,25 @@ h1 {
     border-radius: 25px;
 }
 
+nav {
+    background-color: salmon;
+}
+
 #submit-user {
     background-color: salmon;
     margin-left: 230px;
+    padding-bottom: 0px;
+}
+
+#user-input2 {
+    position: absolute;
+    top: 350px;
+    left: 900px;
+    background-color: white;
+    width: 400px;
+    border-radius: 25px;
+}
+
+#work {
+    background-color: white;
 }
