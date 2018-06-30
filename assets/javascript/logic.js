@@ -21,6 +21,7 @@ $(document).ready(function () {
     var database = firebase.database();
 
     function makeQuery(location, category, keyWord) {
+        
         var location = location;
         var category = category;
         var keyWord = keyWord;
@@ -31,10 +32,10 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                // console.log('url', queryURL);
-                // console.log(response)
+                console.log('url', queryURL);
+                console.log(response)
                 var results = JSON.parse(response).events;
-                // console.log('results', results)
+                console.log('results', results)
                 updatePage(results);
             });
 
@@ -98,7 +99,7 @@ $(document).ready(function () {
         // In this case, the "this" keyword refers to the button that was clicked
         var firstName = $("#first_name").val().trim();
         var lastName = $("#last_name").val().trim();
-        var location = $("#location").val().trim();
+        var location = $("#location1").val().trim();
         var email = $("#email").val().trim();
         var userInput = $("#user-input");
         console.log(userInput)
