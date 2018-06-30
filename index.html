@@ -9,20 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/logic.js"></script>
+
 </head>
 
 <body>
-        <nav>
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">Explore</a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="locals.html">Locals</a></li>
-                    
-                  </ul>
-                </div>
-              </nav>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Explore</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="locals.html">Locals</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="row">
@@ -57,7 +64,7 @@
             <div class="col s12 m6 scale-transition scale-out" id="event-list">
 
             </div>
-<!--this is the initial card where the user puts their personal information-->
+            <!--this is the initial card where the user puts their personal information-->
             <form id="user-input" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
@@ -79,7 +86,7 @@
                         <input placeholder="Email" id="email" type="email" class="validate">
                     </div>
                 </div>
-                           
+
                 <div class="col s2">
                     <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
                     </button>
@@ -104,30 +111,27 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Date/Time" id="date_time" type="text" class="validate">
+                    </div>
+                    <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Date/Time" id="date_time" type="text" class="validate">
+                            <input placeholder="Comments" id="comments" type="text" class="validate">
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input placeholder="Comments" id="comments" type="text" class="validate">
-                            </div>
-                <div class="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
-                    </button>
-                </div>
+                        <div class="col s2">
+                            <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
+                            </button>
+                        </div>
 
             </form>
-        </div>
+            </div>
 
             <div class="row scale-transition scale-out">
                 <div class="col s12 m6" id="map">
                 </div>
             </div>
-        </div>
+            </div>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
-        <script type="text/javascript" src="assets/javascript/logic.js"></script>
-        
 </body>
 
-</html> 
+</html>
