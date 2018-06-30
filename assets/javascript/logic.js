@@ -1,5 +1,10 @@
 $(document).ready(function () {
-
+    $(".dropdown-trigger").dropdown();
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+    });
+    
     jQuery.ajaxPrefilter(function (options) {
 
         if (options.crossDomain && jQuery.support.cors) {
@@ -107,7 +112,11 @@ $(document).ready(function () {
         // In this case, the "this" keyword refers to the button that was clicked
         var firstName = $("#first_name").val().trim();
         var lastName = $("#last_name").val().trim();
+
+        var userLocation = $("#user_location").val().trim();
+
         var location = $("#location1").val().trim();
+
         var email = $("#email").val().trim();
         var userInput = $("#user-input");
         console.log(userInput)
@@ -118,5 +127,7 @@ $(document).ready(function () {
 
     var userInput2 = $("#user-input2");
     userInput2.hide();
+
+
 
 });

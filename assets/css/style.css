@@ -43,18 +43,30 @@ nav {
 }
 
 #user-input2 {
-    position: absolute;
-    top: 350px;
-    left: 900px;
+    position: relative;
+    top: -30px;
+    left: 675px;
     background-color: white;
     width: 400px;
     border-radius: 25px;
 }
 
-#work {
+#slide {
     background-color: white;
 }
 
+
+#link-button {
+    background-color: salmon;
+    margin: 50px;
+}
+
+#events-slide {
+    width: 600px;
+    margin: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 #event-display {
     background-color: white;
 }
@@ -63,4 +75,5 @@ nav {
     border-width: 5pt;
     border-color: salmon;
     padding: 5px;
+
 }
