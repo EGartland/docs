@@ -21,7 +21,7 @@ $(document).ready(function () {
     var database = firebase.database();
 
     function makeQuery(location, category, keyWord) {
-        
+
         var location = location;
         var category = category;
         var keyWord = keyWord;
@@ -36,7 +36,13 @@ $(document).ready(function () {
                 console.log(response)
                 var results = JSON.parse(response).events;
                 console.log('results', results)
-                updatePage(results);
+
+                if (results == null) {
+                    $("#event-list").append("<h1>No results found, sorry!</h1>")
+                }
+                else {
+                    updatePage(results);
+                }
             });
 
     };
@@ -91,6 +97,7 @@ $(document).ready(function () {
 
         // Constructing a URL to search Giphy for the name of the person who said the quote
         makeQuery(location, category, keyWord)
+        $("#event-list").removeClass("scale-out")
     });
 
 

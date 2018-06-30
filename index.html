@@ -53,13 +53,11 @@
 
             </div>
         </div>
-        <div class="row scale-transition">
-            <div class="col s12 m6" id="event-list">
+        <div class="row" id="event-display">
+            <div class="col s12 m6 scale-transition scale-out" id="event-list">
 
             </div>
-        </div>
-        <!--this is the initial card where the user puts their personal information-->
-        <div class="row">
+<!--this is the initial card where the user puts their personal information-->
             <form id="user-input" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
@@ -73,7 +71,7 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Location Ex:Kansas City, MO" id="location" type="text" class="validate">
+                        <input placeholder="Location Ex:Kansas City, MO" id="location1" type="text" class="validate">
                     </div>
                 </div>
                 <div class="row">
@@ -88,42 +86,38 @@
                 </div>
 
             </form>
-        </div>
-        <!--This is the more detailed input form about events-->
-        <div class="row">
-                <form id="user-input2" class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="Category" id="category" type="text" class="validate">
-    
-                        </div>
-                        <div class="input-field col s12">
-                            <input placeholder="Venue Name" id="venue_name" type="text" class="validate">
-                        </div>
+
+            <form id="user-input2" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Category" id="category" type="text" class="validate">
+
                     </div>
-    
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="Venue Location" id="venue_location" type="text" class="validate">
-                        </div>
+                    <div class="input-field col s12">
+                        <input placeholder="Venue Name" id="venue_name" type="text" class="validate">
                     </div>
-                    <div class="row">
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Venue Location" id="venue_location" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Date/Time" id="date_time" type="text" class="validate">
+                        </div>
+                        <div class="row">
                             <div class="input-field col s12">
-                                <input placeholder="Date/Time" id="date_time" type="text" class="validate">
+                                <input placeholder="Comments" id="comments" type="text" class="validate">
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="Comments" id="comments" type="text" class="validate">
-                                </div>
-                    <div class="col s2">
-                        <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
-                        </button>
-                    </div>
-    
-                </form>
-            </div>
+                <div class="col s2">
+                    <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
+                    </button>
+                </div>
 
-
+            </form>
+        </div>
 
             <div class="row scale-transition scale-out">
                 <div class="col s12 m6" id="map">
