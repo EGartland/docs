@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     jQuery.ajaxPrefilter(function (options) {
 
         if (options.crossDomain && jQuery.support.cors) {
@@ -6,6 +7,18 @@ $(document).ready(function () {
         }
     });
 
+    var config = {
+        apiKey: "AIzaSyAlQqYR8mkr7JCsFZFbdpZBAVmu3PAskKg",
+        authDomain: "group-project-1-65238.firebaseapp.com",
+        databaseURL: "https://group-project-1-65238.firebaseio.com",
+        projectId: "group-project-1-65238",
+        storageBucket: "group-project-1-65238.appspot.com",
+        messagingSenderId: "182134415917"
+    };
+    firebase.initializeApp(config);
+
+    // Create a variable to reference the database
+    var database = firebase.database();
 
     function makeQuery(location, category, keyWord) {
         var location = location;
