@@ -2,22 +2,21 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
 
-        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
-            <!--Import Google Icon Font-->
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <!-- Compiled and minified CSS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-   
-=======
-  
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 
 <body>
@@ -55,7 +54,7 @@
                 </div>
                 <div class="col s2">
 
-                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light mapButton" type="submit" id="submit" name="action">Submit
                     </button>
                 </div>
             </form>
@@ -95,37 +94,37 @@
                 </div>
 
                 <div class="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
+                    <button class="btn waves-effect waves-light mapButton" type="submit" id="submit-user" name="action">Submit
                     </button>
                 </div>
 
             </form>
 
-            <form id="user-input2" class="col s12">
+            <form id="user-input2" class="col s12 m6">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <input placeholder="Category" id="category" type="text" class="validate">
 
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <input placeholder="Venue Name" id="venue_name" type="text" class="validate">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <input placeholder="Venue Location" id="venue_location" type="text" class="validate">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <input placeholder="Date/Time" id="date_time" type="text" class="validate">
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input placeholder="Comments" id="comments" type="text" class="validate">
                         </div>
-                        <div class="col s2">
+                        <div class="col s2 m2">
                             <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
                             </button>
                         </div>
@@ -143,9 +142,9 @@
             </div>
 
 
-        <script type="text/javascript" src="assets/javascript/logic.js"></script>
-        
-        
+            <script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+
 
 </body>
 
