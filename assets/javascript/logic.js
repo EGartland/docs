@@ -4,6 +4,18 @@ $(document).ready(function () {
         fullWidth: true,
         indicators: true
     });
+
+    $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+
+      $(document).ready(function(){
+        $('.datepicker').datepicker();
+      });
     
     jQuery.ajaxPrefilter(function (options) {
 
@@ -115,18 +127,105 @@ $(document).ready(function () {
 
         var userLocation = $("#user_location").val().trim();
 
-        var location = $("#location1").val().trim();
-
         var email = $("#email").val().trim();
         var userInput = $("#user-input");
-        console.log(userInput)
         userInput.hide();
-        userInput2.show()
+        userInput2.show();
+
     });
 
 
+    $("#attractions-button").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        attractionsDisplay.show();
+    });
+
+    $("#arts-button").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        artsDisplay.show();
+    });
+
+    $("#entertainment-button").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        entertainmentDisplay.show();
+    });
+
+    $("#sports-button").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        sportsDisplay.show();
+    });
+
+    function resetEvents() {
+        attractionsDisplay.hide();
+        artsDisplay.hide();
+        entertainmentDisplay.hide();
+        sportsDisplay.hide(); 
+    }
+
+
+    //These on click events are for the drop down menue but do the same thing as the above commands.
+    $("#attractions-drop").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        resetEvents();
+        attractionsDisplay.show();
+    });
+
+    $("#arts-drop").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        resetEvents();
+        artsDisplay.show();
+    });
+
+    $("#entertainment-drop").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        resetEvents();
+        entertainmentDisplay.show();
+    });
+
+    $("#sports-drop").on("click", function (event) {
+        event.preventDefault();
+        var eventsSlide= $("#events-slide");
+        eventsSlide.hide();
+        resetEvents();
+        sportsDisplay.show();
+    });
+
+    $("#help-tourist-button").on("click", function (event) {
+        event.preventDefault();
+        userInput.show();
+        eventDisplay.hide();
+        $(this).hide();
+    })
+
+
+    var attractionsDisplay= $("#attractions-display");
+    var artsDisplay= $("#arts-display");
+    var entertainmentDisplay= $("#entertainment-display");
+    var sportsDisplay= $("#sports-display");
     var userInput2 = $("#user-input2");
+    var userInput = $("#user-input");
+        
+
+    var eventDisplay= $("#event-display");
+    eventDisplay.show();
     userInput2.hide();
+    userInput.hide();
+
+   resetEvents();
 
 
 
