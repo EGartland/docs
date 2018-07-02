@@ -1,5 +1,50 @@
-body {
-    background-image: url("../images/skyline2.jpg");
+
+
+#attractions {
+    background-image: url("../images/attractions.jpg");
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: salmon;
+    background-size: 600px;
+   
+}
+
+#attractions-button, #arts-button, #entertainment-button, #sports-button {
+    background-color: salmon;
+}
+
+#test {
+    height: 400px;
+  }
+
+
+#arts {
+    background-image: url("../images/arts.jpg");
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: salmon;
+    background-size: 600px;
+    
+}
+
+#entertainment {
+    background-image: url("../images/entertainment.jpg");
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: salmon;
+    background-size: 600px;
+}
+
+#sports {
+    background-image: url("../images/sports.jpg");
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: salmon;
+    background-size: 600px;
 }
 
 h1 {
@@ -7,7 +52,8 @@ h1 {
      position: relative;
      top: 20px;
      font-family: 'Courier New', Courier, monospace;
-     font-weight: bold;
+     font-weight: bolder;
+     color: white;
 }
 
 
@@ -27,7 +73,8 @@ h1 {
 
 #user-input {
     background-color: white;
-    float: right;
+   margin-left: auto;
+   margin-right: auto;
     width: 400px;
     border-radius: 25px;
 }
@@ -36,19 +83,23 @@ nav {
     background-color: salmon;
 }
 
-#submit-user {
+#submit-user, {
     background-color: salmon;
     margin-left: 230px;
     padding-bottom: 0px;
 }
 
+#submit-user2 {
+    background-color: salmon;
+}
+
 #user-input2 {
-    position: relative;
-    top: -30px;
-    left: 675px;
     background-color: white;
+    margin-left: auto;
+    margin-right: auto;
     width: 400px;
     border-radius: 25px;
+    padding: 15px;
 }
 
 #slide {
@@ -67,6 +118,7 @@ nav {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
 #event-display {
     background-color: white;
 }
@@ -76,4 +128,21 @@ nav {
     border-color: salmon;
     padding: 5px;
 
+}
+
+#main2, #main {
+    min-height: 400px;
+}
+
+h3 {
+  text-align: center;
+}
+
+#help-tourist-button{
+    background-color: salmon;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-top: 100px;
 }
