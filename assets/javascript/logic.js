@@ -5,40 +5,42 @@ $(document).ready(function () {
         indicators: true
     });
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.parallax').parallax();
-      });
-
-      $(document).ready(function(){
-        $('select').formSelect();
-      });
-
-      $(document).ready(function(){
-        $('.datepicker').datepicker();
-      });
-    
-    jQuery.ajaxPrefilter(function (options) {
-
-        if (options.crossDomain && jQuery.support.cors) {
-            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-        }
     });
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCr_hLnXU7Cnf5tu-ujEIL4XMynoRAq_bQ",
-    authDomain: "fewdaysoff-36949.firebaseapp.com",
-    databaseURL: "https://fewdaysoff-36949.firebaseio.com",
-    projectId: "fewdaysoff-36949",
-    storageBucket: "fewdaysoff-36949.appspot.com",
-    messagingSenderId: "140262551840"
-  };
-  firebase.initializeApp(config);
+    // $(document).ready(function () {
+    //     $('select').formSelect();
+    // });
+
+    $(document).ready(function () {
+        $('.datepicker').datepicker();
+    });
+
+
+
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCr_hLnXU7Cnf5tu-ujEIL4XMynoRAq_bQ",
+        authDomain: "fewdaysoff-36949.firebaseapp.com",
+        databaseURL: "https://fewdaysoff-36949.firebaseio.com",
+        projectId: "fewdaysoff-36949",
+        storageBucket: "fewdaysoff-36949.appspot.com",
+        messagingSenderId: "140262551840"
+    };
+    firebase.initializeApp(config);
 
     // Create a variable to reference the database
     var database = firebase.database();
 
     function makeQuery(location, category, keyWord) {
+
+        jQuery.ajaxPrefilter(function (options) {
+
+            if (options.crossDomain && jQuery.support.cors) {
+                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+            }
+        });
 
         var location = location;
         var category = category;
@@ -50,10 +52,8 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                console.log('url', queryURL);
-                console.log(response)
+
                 var results = JSON.parse(response).events;
-                console.log('results', results)
 
                 if (results == null) {
                     $("#event-list").append("<h1>No results found, sorry!</h1>")
@@ -65,13 +65,13 @@ $(document).ready(function () {
 
     };
 
-
-
     function updatePage(results) {
 
 
         for (var i = 0; i < 10; i++) {
             var eventResponse = results.event[i];
+            latitude = eventResponse.latitude;
+            longitude = eventResponse.longitude;
 
             eventCount = i + 1;
 
@@ -83,29 +83,28 @@ $(document).ready(function () {
             var title = eventResponse.title;
             var $eventListItem = $("<li class='list-group-item eventTitle'>");
 
-            console.log('title', title);
             $eventListItem.append("<h3>" + title + "</h3>")
 
             var venueName = eventResponse.venue_name;
-
-            console.log(venueName);
 
             $eventListItem.append("<p>Venue: " + venueName + "</p>");
 
 
             var startTime = moment(eventResponse.start_time).format('MMMM Do YYYY, h:mm:ss a');
 
-            console.log(startTime);
-
             $eventListItem.append("<p>Time: " + startTime + "</p>");
 
-            console.log("---------------------------------------------")
-
-            $eventListItem.append('<button class="btn waves-effect waves-light mapButton" type="submit" id="mapButton' + i + '" name="action">Map It!</button>')
+            $eventListItem.append('<button class="btn waves-effect waves-light mapButton" type="submit" id="mapButton' + i + '" name="action" venueLat=' + latitude + ' venueLon=' + longitude + '>Map It!</button>')
 
             $eventList.append($eventListItem);
         }
+
     }
+
+    $(document).on("click", ".mapButton", function (event) {
+        event.preventDefault();
+        initMap();
+    });
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
@@ -139,28 +138,28 @@ $(document).ready(function () {
 
     $("#attractions-button").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         attractionsDisplay.show();
     });
 
     $("#arts-button").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         artsDisplay.show();
     });
 
     $("#entertainment-button").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         entertainmentDisplay.show();
     });
 
     $("#sports-button").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         sportsDisplay.show();
     });
@@ -169,14 +168,14 @@ $(document).ready(function () {
         attractionsDisplay.hide();
         artsDisplay.hide();
         entertainmentDisplay.hide();
-        sportsDisplay.hide(); 
+        sportsDisplay.hide();
     }
 
 
     //These on click events are for the drop down menue but do the same thing as the above commands.
     $("#attractions-drop").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         resetEvents();
         attractionsDisplay.show();
@@ -184,7 +183,7 @@ $(document).ready(function () {
 
     $("#arts-drop").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         resetEvents();
         artsDisplay.show();
@@ -192,7 +191,7 @@ $(document).ready(function () {
 
     $("#entertainment-drop").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         resetEvents();
         entertainmentDisplay.show();
@@ -200,7 +199,7 @@ $(document).ready(function () {
 
     $("#sports-drop").on("click", function (event) {
         event.preventDefault();
-        var eventsSlide= $("#events-slide");
+        var eventsSlide = $("#events-slide");
         eventsSlide.hide();
         resetEvents();
         sportsDisplay.show();
@@ -214,21 +213,28 @@ $(document).ready(function () {
     })
 
 
-    var attractionsDisplay= $("#attractions-display");
-    var artsDisplay= $("#arts-display");
-    var entertainmentDisplay= $("#entertainment-display");
-    var sportsDisplay= $("#sports-display");
+    var attractionsDisplay = $("#attractions-display");
+    var artsDisplay = $("#arts-display");
+    var entertainmentDisplay = $("#entertainment-display");
+    var sportsDisplay = $("#sports-display");
     var userInput2 = $("#user-input2");
     var userInput = $("#user-input");
-        
 
-    var eventDisplay= $("#event-display");
+
+    var eventDisplay = $("#event-display");
     eventDisplay.show();
     userInput2.hide();
     userInput.hide();
 
-   resetEvents();
+    resetEvents();
 
 
 
 });
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: parseFloat($(this).attr("venueLat")), lng: parseFloat($(this).attr("venueLon"))},
+        zoom: 5
+    });
+}
