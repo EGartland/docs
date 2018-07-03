@@ -3,21 +3,23 @@
 
 <head>
 
-        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
-            <!--Import Google Icon Font-->
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <!-- Compiled and minified CSS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -37,15 +39,17 @@
     </nav>
 
     <div id="test" class="parallax-container">
-            <div class="parallax"><img src="assets/images/skyline2.jpg"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="header center">
-                        <h1>Few Days Off</h1>
-                    </div>
+        <div class="parallax">
+            <img src="assets/images/skyline2.jpg">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="header center">
+                    <h1>Few Days Off</h1>
                 </div>
             </div>
-          </div>
+        </div>
+    </div>
     <div id="main">
         <div class="row">
             <h3>Search for Main Tourist Destinations and Events</h3>
@@ -61,112 +65,120 @@
                 </div>
                 <div class="col s2">
 
-                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light mapButton" type="submit" id="submit" name="action">Submit
                     </button>
                 </div>
             </form>
         </div>
         <div class="row">
-            <div class="col s12 m6" id="firebase">
+            <div class="col s12 m6">
 
             </div>
         </div>
         <div class="row" id="event-display">
-            <div class="col s12 m6 scale-transition scale-out" id="event-list"> 
+                <div class="col s12 m3" id="firebase">
 
+                    </div>
+            <div class="col s12 m6 scale-transition scale-out" id="event-list">
+
+            </div>
+            <div class="col s12 m3">
+
+                </div>
+        </div>
+        <!--this is the initial card where the user puts their personal information-->
+        <form id="user-input" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="First Name" id="first_name" type="text" class="validate">
+
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+
+                    <input placeholder="Location Ex:Kansas City, MO" id="user_location" type="text" class="validate">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Email" id="email" type="email" class="validate">
+                </div>
+            </div>
+
+            <div class="col s2">
+                <button class="btn waves-effect waves-light mapButton" type="submit" id="submit-user" name="action">Submit
+                </button>
+            </div>
+
+        </form>
+        <!--this is the the card that is hidden and appears after submit button is pressed-->
+        <form id="user-input2" class="col s12">
+            <div class="row">
+                <label>Category</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>Choose One</option>
+                    <option value="1">Attractions</option>
+                    <option value="2">Arts &amp; Culture</option>
+                    <option value="3">Entertainment</option>
+                    <option value="3">Sports</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Venue Name" id="venue_name" type="text" class="validate">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Venue Location" id="venue_location" type="text" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Date/Time" id="date_time" type="text" class="datepicker" class="validate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Comments" id="comments" type="text" class="validate">
+                </div>
+            </div>
+            <div class="col s2">
+                <button class="btn waves-effect waves-light mapButton" type="submit" id="submit-user2" name="action">Submit
+                </button>
+            </div>
+
+
+
+        </form>
+
+        <a id="help-tourist-button" class="waves-effect waves-light btn-large mapButton">Help tourist find where the locals go!</a>
+
+        <div class="row scale-transition scale-out">
+            <div class="col s12 m6" id="map">
             </div>
         </div>
-            <!--this is the initial card where the user puts their personal information-->
-            <form id="user-input" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="First Name" id="first_name" type="text" class="validate">
-
-                    </div>
-                    <div class="input-field col s12">
-                        <input placeholder="Last Name" id="last_name" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-
-                        <input placeholder="Location Ex:Kansas City, MO" id="user_location" type="text" class="validate">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Email" id="email" type="email" class="validate">
-                    </div>
-                </div>
-
-                <div class="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" id="submit-user" name="action">Submit
-                    </button>
-                </div>
-
-            </form>
-<!--this is the the card that is hidden and appears after submit button is pressed-->
-            <form id="user-input2" class="col s12">
-                <div class="row">
-                        <label>Category</label>
-                        <select class="browser-default">
-                          <option value="" disabled selected>Choose One</option>
-                          <option value="1">Attractions</option>
-                          <option value="2">Arts &amp; Culture</option>
-                          <option value="3">Entertainment</option>
-                          <option value="3">Sports</option>
-                        </select>
-                          </div>
-                    <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Venue Name" id="venue_name" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Venue Location" id="venue_location" type="text" class="validate">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Date/Time" id="date_time" type="text" class="datepicker" class="validate">
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="Comments" id="comments" type="text" class="validate">
-                        </div>
-                    </div>
-                        <div class="col s2">
-                            <button class="btn waves-effect waves-light" type="submit" id="submit-user2" name="action">Submit
-                            </button>
-                        </div>
+    </div>
 
 
 
-            </form>
-            
-            <a id="help-tourist-button" class="waves-effect waves-light btn-large">Help tourist find where the locals go!</a>
-
-            <div class="row scale-transition scale-out">
-                <div class="col s12 m6" id="map">
-                </div>
-            </div>
-            </div>
-        
+    <div id="test" class="parallax-container">
+        <div class="parallax">
+            <img src="assets/images/entertainment2.jpg">
+        </div>
+    </div>
 
 
-            <div id="test" class="parallax-container">
-                    <div class="parallax"><img src="assets/images/entertainment2.jpg"></div>
-                    </div>       
+    <script type="text/javascript" src="assets/javascript/logic.js"></script>
 
 
-        <script type="text/javascript" src="assets/javascript/logic.js"></script>
-        
-        
 
 </body>
 

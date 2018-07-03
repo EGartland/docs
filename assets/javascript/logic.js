@@ -101,6 +101,8 @@ $(document).ready(function () {
 
             console.log("---------------------------------------------")
 
+            $eventListItem.append('<button class="btn waves-effect waves-light mapButton" type="submit" id="mapButton' + i + '" name="action">Map It!</button>')
+
             $eventList.append($eventListItem);
         }
     }

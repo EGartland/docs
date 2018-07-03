@@ -10,10 +10,6 @@
    
 }
 
-#attractions-button, #arts-button, #entertainment-button, #sports-button {
-    background-color: salmon;
-}
-
 #test {
     height: 400px;
   }
@@ -55,12 +51,6 @@ h1 {
      font-weight: bolder;
      color: white;
 }
-
-
-#submit {
-    background-color: salmon;
-}
-
 #search-form {
     background-color: white;
     border-radius: 15px;
@@ -84,13 +74,8 @@ nav {
 }
 
 #submit-user, {
-    background-color: salmon;
     margin-left: 230px;
     padding-bottom: 0px;
-}
-
-#submit-user2 {
-    background-color: salmon;
 }
 
 #user-input2 {
@@ -108,7 +93,6 @@ nav {
 
 
 #link-button {
-    background-color: salmon;
     margin: 50px;
 }
 
@@ -123,9 +107,7 @@ nav {
     background-color: white;
 }
 .list-group-item {
-    border-style: ridge;
-    border-width: 5pt;
-    border-color: salmon;
+    border-bottom: 5pt black dashed;
     padding: 5px;
 
 }
@@ -139,10 +121,17 @@ h3 {
 }
 
 #help-tourist-button{
-    background-color: salmon;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
     margin-top: 100px;
+}
+
+p {
+    text-align: center;
+}
+
+.mapButton {
+    background-color: salmon;
 }
