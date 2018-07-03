@@ -4,7 +4,7 @@
 <head>
 
     <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
     <!--Import Google Icon Font-->
@@ -65,26 +65,26 @@
                 </div>
                 <div class="col s2">
 
-                    <button class="btn waves-effect waves-light mapButton" type="submit" id="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light newButton" type="submit" id="submit" name="action">Submit
                     </button>
                 </div>
             </form>
         </div>
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m6 id="firebase">
 
             </div>
         </div>
         <div class="row" id="event-display">
-                <div class="col s12 m3" id="firebase">
+            <div class="col s12 m3">
 
-                    </div>
+            </div>
             <div class="col s12 m6 scale-transition scale-out" id="event-list">
 
             </div>
             <div class="col s12 m3">
 
-                </div>
+            </div>
         </div>
         <!--this is the initial card where the user puts their personal information-->
         <form id="user-input" class="col s12">
@@ -112,7 +112,7 @@
             </div>
 
             <div class="col s2">
-                <button class="btn waves-effect waves-light mapButton" type="submit" id="submit-user" name="action">Submit
+                <button class="btn waves-effect waves-light newButton" type="submit" id="submit-user" name="action">Submit
                 </button>
             </div>
 
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="col s2">
-                <button class="btn waves-effect waves-light mapButton" type="submit" id="submit-user2" name="action">Submit
+                <button class="btn waves-effect waves-light newButton" type="submit" id="submit-user2" name="action">Submit
                 </button>
             </div>
 
@@ -159,7 +159,7 @@
 
         </form>
 
-        <a id="help-tourist-button" class="waves-effect waves-light btn-large mapButton">Help tourist find where the locals go!</a>
+        <a id="help-tourist-button" class="waves-effect waves-light btn-large newButton">Help tourist find where the locals go!</a>
 
         <div class="row scale-transition scale-out">
             <div class="col s12 m6" id="map">
@@ -177,6 +177,7 @@
 
 
     <script type="text/javascript" src="assets/javascript/logic.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDScTq7AHA5snYrxTMwYju4bS316nIU-ng&callback=initMap" async defer></script>
 
 
 
