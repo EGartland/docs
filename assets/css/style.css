@@ -14,6 +14,14 @@
     height: 400px;
   }
 
+.logo {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 150px;
+}
+
 
 #arts {
     background-image: url("../images/arts.jpg");

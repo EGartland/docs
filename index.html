@@ -14,8 +14,6 @@
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 
@@ -23,18 +21,28 @@
 </head>
 
 <body>
+    <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+        <li><a href="locals.html">Locals</a></li>
+        <li class="divider"></li>
+        <li><a id="attractions-drop" href="#!">Attractions</a></li>
+        <li><a id="entertainment-drop"href="#!">Entertainment</a></li>
+        <li><a id="sports-drop" href="#!">Sports</a></li>
+        <li><a id="arts-drop" href="#!">Arts</a></li>
+      </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo">Explore</a>
+            <!-- <a href="index.html" class="brand-logo">Explore</a> -->
+            <a href="index.html">
+                    <img src="assets/images/logo.png" alt="miniLogo" style="width:150px;height:60px;border:0">
+                  </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
+                <!-- <li>
                     <a href="index.html">Home</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="locals.html">Locals</a>
                 </li>
-
-            </ul>
         </div>
     </nav>
 
@@ -45,7 +53,8 @@
         <div class="container">
             <div class="row">
                 <div class="header center">
-                    <h1>Few Days Off</h1>
+                    <br>
+                    <img src="assets/images/logo.png" alt="logo">
                 </div>
             </div>
         </div>
@@ -121,12 +130,12 @@
         <form id="user-input2" class="col s12">
             <div class="row">
                 <label>Category</label>
-                <select class="browser-default">
+                <select class="browser-default" id="dropdown">
                     <option value="" disabled selected>Choose One</option>
                     <option value="1">Attractions</option>
                     <option value="2">Arts &amp; Culture</option>
                     <option value="3">Entertainment</option>
-                    <option value="3">Sports</option>
+                    <option value="4">Sports</option>
                 </select>
             </div>
             <div class="row">
@@ -175,8 +184,9 @@
         </div>
     </div>
 
-
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/logic.js"></script>
+    <script type="text/javascript" src="assets/javascript/firebase.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDScTq7AHA5snYrxTMwYju4bS316nIU-ng&callback=initMap" async defer></script>
 
 

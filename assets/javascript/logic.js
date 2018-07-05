@@ -18,21 +18,6 @@ $(document).ready(function () {
     });
 
 
-
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCr_hLnXU7Cnf5tu-ujEIL4XMynoRAq_bQ",
-        authDomain: "fewdaysoff-36949.firebaseapp.com",
-        databaseURL: "https://fewdaysoff-36949.firebaseio.com",
-        projectId: "fewdaysoff-36949",
-        storageBucket: "fewdaysoff-36949.appspot.com",
-        messagingSenderId: "140262551840"
-    };
-    firebase.initializeApp(config);
-
-    // Create a variable to reference the database
-    var database = firebase.database();
-
     function makeQuery(location, category, keyWord) {
 
         jQuery.ajaxPrefilter(function (options) {
