@@ -53,6 +53,7 @@ $("#submit-user2").on("click", function (event) {
     event.preventDefault();
 
     var dropdown = $("#dropdown").val();
+    var firstName2 = $("#first_name2").val();
     var venue = $("#venue_name").val();
     var vLocation = $("#venue_location").val();
     var date = $("#date_time").val();
@@ -60,6 +61,7 @@ $("#submit-user2").on("click", function (event) {
 
     database.ref().push({
         category: dropdown,
+        name: firstName2,
         venue: venue,
         vLocation: vLocation,
         date: date,
@@ -75,7 +77,7 @@ database.ref().on("child_added", function (snapshot) {
     
     $("#attractInfo").append(`
             <tr>
-                <td>${snapshot.val().first}</td>
+                <td>${snapshot.val().name}</td>
                 <td>${snapshot.val().venue}</td>
                 <td>${snapshot.val().vLocation}</td>
                 <td>${snapshot.val().date}</td>
@@ -90,7 +92,7 @@ database.ref().on("child_added", function (snapshot) {
 
     $("#artInfo").append(`
             <tr>
-                <td>${snapshot.val().first}</td>
+                <td>${snapshot.val().name}</td>
                 <td>${snapshot.val().venue}</td>
                 <td>${snapshot.val().vLocation}</td>
                 <td>${snapshot.val().date}</td>
@@ -104,7 +106,7 @@ database.ref().on("child_added", function (snapshot) {
 
     $("#entInfo").append(`
             <tr>
-                <td>${snapshot.val().first}</td>
+                <td>${snapshot.val().name}</td>
                 <td>${snapshot.val().venue}</td>
                 <td>${snapshot.val().vLocation}</td>
                 <td>${snapshot.val().date}</td>
@@ -118,7 +120,7 @@ database.ref().on("child_added", function (snapshot) {
     
     $("#sportsInfo").append(`
             <tr>
-                <td>${snapshot.val().first}</td>
+                <td>${snapshot.val().name}</td>
                 <td>${snapshot.val().venue}</td>
                 <td>${snapshot.val().vLocation}</td>
                 <td>${snapshot.val().date}</td>
