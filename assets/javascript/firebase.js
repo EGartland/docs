@@ -71,7 +71,7 @@ $("#submit-user2").on("click", function (event) {
 });
 
 database.ref().on("child_added", function (snapshot) {
-    // if (category == 1)
+    if (snapshot.val().category == 1){
     
     $("#attractInfo").append(`
             <tr>
@@ -83,10 +83,11 @@ database.ref().on("child_added", function (snapshot) {
             </tr>
     `);
     
-});
+}});
 
 database.ref().on("child_added", function (snapshot) {
-    // if (category == 2)
+    if (snapshot.val().category == 2){
+
     $("#artInfo").append(`
             <tr>
                 <td>${snapshot.val().first}</td>
@@ -96,10 +97,11 @@ database.ref().on("child_added", function (snapshot) {
                 <td>${snapshot.val().comments}</td>
             </tr>
     `);
-});
+}});
 
 database.ref().on("child_added", function (snapshot) {
-    // if (category == 3)
+    if (snapshot.val().category == 3){
+
     $("#entInfo").append(`
             <tr>
                 <td>${snapshot.val().first}</td>
@@ -109,10 +111,11 @@ database.ref().on("child_added", function (snapshot) {
                 <td>${snapshot.val().comments}</td>
             </tr>
     `);
-});
+}});
 
 database.ref().on("child_added", function (snapshot) {
-    // if (category == 4)
+    if (snapshot.val().category == 4){
+    
     $("#sportsInfo").append(`
             <tr>
                 <td>${snapshot.val().first}</td>
@@ -122,4 +125,4 @@ database.ref().on("child_added", function (snapshot) {
                 <td>${snapshot.val().comments}</td>
             </tr>
     `);
-});
+}});
