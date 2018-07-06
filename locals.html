@@ -13,8 +13,6 @@
         <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
 <body>
@@ -30,9 +28,12 @@
   </ul>
   <nav>
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo">Explore</a>
+      <!-- <a href="index.html" class="brand-logo">Explore</a> -->
+                  <a href="index.html">
+                    <img src="assets/images/logo.png" alt="miniLogo" style="width:150px;height:60px;border:0">
+                  </a>
       <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
+          <!-- <li><a href="index.html">Home</a></li> -->
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Locals<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
@@ -43,7 +44,8 @@
       <div class="container">
           <div class="row">
               <div class="header center">
-                  <h1>Few Days Off</h1>
+                  <br>
+                  <img src="assets/images/logo.png" alt="logo">
               </div>
           </div>
       </div>
@@ -89,6 +91,21 @@
               </span>
             </div>
           </div>
+          <div class="panel-body">
+              <table class="table table-hover" id="attractTable">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Venue</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                      </tr>
+                  </thead>
+                  <tbody id="attractInfo">
+                  </tbody>
+              </table>
+          </div>
         </div>
 
         <!--this is the hidden card that will display user arts and culture-->
@@ -98,6 +115,21 @@
               <span class="black-text">Arts and Culture
               </span>
             </div>
+          </div>
+          <div class="panel-body">
+              <table class="table table-hover" id="artTable">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Venue</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                      </tr>
+                  </thead>
+                  <tbody id="artInfo">
+                  </tbody>
+              </table>
           </div>
         </div>
       
@@ -109,6 +141,21 @@
               </span>
             </div>
           </div>
+          <div class="panel-body">
+              <table class="table table-hover" id="entTable">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Venue</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                      </tr>
+                  </thead>
+                  <tbody id="entInfo">
+                  </tbody>
+              </table>
+          </div>
         </div>
                   
         <!--this is the hidden card that will display user sports-->
@@ -119,6 +166,21 @@
               </span>
             </div>
           </div>
+          <div class="panel-body">
+              <table class="table table-hover" id="sportsTable">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Venue</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                      </tr>
+                  </thead>
+                  <tbody id="sportsInfo">
+                  </tbody>
+              </table>
+          </div>
         </div>
         
         </div>
@@ -127,8 +189,9 @@
             <div class="parallax"><img src="assets/images/entertainment2.jpg"></div>
             </div>               
      
+          <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
           <script type="text/javascript" src="assets/javascript/logic.js"></script>
-           
+          <script type="text/javascript" src="assets/javascript/firebase.js"></script> 
         
 </body>
 
