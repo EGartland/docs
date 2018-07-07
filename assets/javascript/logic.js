@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    var map;
+
     $(".dropdown-trigger").dropdown();
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
@@ -79,7 +81,7 @@ $(document).ready(function () {
 
             $eventListItem.append("<p>Time: " + startTime + "</p>");
 
-            $eventListItem.append('<button class="btn waves-effect waves-light mapButton" type="submit" id="mapButton' + i + '" name="action" venueLat=' + latitude + ' venueLon=' + longitude + '>Map It!</button>')
+            $eventListItem.append('<button class="btn waves-effect waves-light mapButton" type="submit" id="mapButton' + i + '" name="action" venue-lat=' + latitude + ' venue-lon=' + longitude + '>Map It!</button>')
 
             $eventList.append($eventListItem);
         }
@@ -88,7 +90,16 @@ $(document).ready(function () {
 
     $(document).on("click", ".mapButton", function (event) {
         event.preventDefault();
+        localLat = parseFloat($(this).attr("venue-lat"))
+        localLon = parseFloat($(this).attr("venue-lon"))
+        center = new google.maps.LatLng(localLat, localLon)
         initMap();
+    });
+
+    $(document).on("click", "#back-to-list", function (event) {
+        $("#map").hide();
+        $("#back-to-list").hide();
+        $("#main").show()
     });
 
     $("#submit").on("click", function (event) {
@@ -213,13 +224,43 @@ $(document).ready(function () {
 
     resetEvents();
 
+    function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(39.09973, -94.57857),
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        // assigning to global variable:
+        map = new google.maps.Map(document.getElementById("map"),
+            mapOptions);
 
+        $("#map").hide();
+        $("#back-to-list").hide();
+        
+    }
+
+    var markers = [];
+
+    function initMap() {
+
+        var center = new google.maps.LatLng(localLat, localLon)
+        
+        map.panTo(center);
+        
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            title: 'Here You Go!'
+        });
+
+        markers.push(marker);
+
+        $("#map").show();
+        $("#back-to-list").show();
+        $("#main").hide()
+    }
+
+    initialize();
 
 });
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: parseFloat($(this).attr("venueLat")), lng: parseFloat($(this).attr("venueLon"))},
-        zoom: 5
-    });
-}
