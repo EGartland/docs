@@ -130,6 +130,22 @@ $(document).ready(function () {
         userInput2.show();
 
     });
+    
+    $("#submit-user2").on("click", function (event) {
+        event.preventDefault();
+        // In this case, the "this" keyword refers to the button that was clicked
+        //var firstName = $("#first_name").val().trim();
+        //var lastName = $("#last_name").val().trim();
+
+        //var userLocation = $("#user_location").val().trim();
+
+        //var email = $("#email").val().trim();
+        //var userInput = $("#user-input");
+        userInput.hide();
+        userInput2.hide();
+
+    });
+
 
 
     $("#attractions-button").on("click", function (event) {
